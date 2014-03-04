@@ -10,7 +10,7 @@
         >
     <testsuites>
         <testsuite name="Core tests">
-            <directory>./*</directory>
+            <directory suffix="Tests.php">./*</directory>
         </testsuite>
     </testsuites>
 </phpunit>
