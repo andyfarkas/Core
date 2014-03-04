@@ -1,8 +1,8 @@
 <?php
 
-namespace Afa\Http\Response\Json;
+namespace Afa\Http\Response\Sender;
 
-class Sender implements Afa\Response\ISender
+class Json implements \Afa\Http\Response\ISender
 {
     /**
      * 
@@ -12,7 +12,7 @@ class Sender implements Afa\Response\ISender
     public function send($data, $code)
     {
         header('Content-type: application/json', true, $code);
-        json_encode($data);
+        echo json_encode($data);
     }
 
 }

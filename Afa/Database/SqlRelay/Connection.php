@@ -1,8 +1,8 @@
 <?php
 
-namespace Database\SqlRelay;
+namespace Afa\Database\SqlRelay;
 
-class Connection implements \Database\IConnection
+class Connection implements \Afa\Database\IConnection
 {
     /**
      *

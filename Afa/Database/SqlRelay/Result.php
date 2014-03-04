@@ -2,7 +2,7 @@
 
 namespace Afa\Database\SqlRelay;
 
-class Result implements \Database\IResult
+class Result implements \Afa\Database\IResult
 {
     /**
      *

@@ -10,7 +10,7 @@ class Factory implements IFactory
      */
     public function create()
     {
-        return new \Http\Request($_SERVER);
+        return new \Afa\Http\Request($_SERVER);
     }
 
 }
