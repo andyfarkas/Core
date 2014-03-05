@@ -66,4 +66,14 @@ class Result implements \Afa\Database\IResult
     {
         sqlrcur_free($this->cursor);
     }
+
+    /**
+     * 
+     * @return int
+     */
+    public function count()
+    {
+        return sqlrcur_rowCount($this->cursor);
+    }
+
 }

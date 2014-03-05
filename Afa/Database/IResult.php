@@ -2,7 +2,7 @@
 
 namespace Afa\Database;
 
-interface IResult extends \Iterator
+interface IResult extends \Iterator, \Countable
 {
     
 }
