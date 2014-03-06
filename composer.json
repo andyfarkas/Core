@@ -1,24 +1,6 @@
 {
+    "name": "afa/core",
     "autoload": {
-        "psr-4": {"Afa\\": "src/Afa"}
-    },
-    "repositories": [
-        {
-            "type": "package",
-            "package": {
-                "name": "afa/core",
-                "version": "dev-master",
-                "source": {
-                    "url": "git://github.com/weaverryan/derp-dangerzone.git",
-                    "type": "git",
-                    "reference": "master"
-                },
-                "autoload": {
-                    "psr-0" : {
-                        "Afa\\" : "src/Afa"
-                    }
-                }
-            }
-        }
-    ]
+        "psr-4": {"Afa\\": "src"}
+    }
 }
