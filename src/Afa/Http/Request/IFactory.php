@@ -6,7 +6,7 @@ interface IFactory
 {
     /**
      * 
-     * @return Afa\Http\IRequest
+     * @return \Afa\Http\IRequest
      */
     function create();
 }

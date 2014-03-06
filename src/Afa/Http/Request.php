@@ -10,14 +10,21 @@ class Request implements IRequest
      * @var array
      */
     protected $server = array();
-    
+
     /**
-     * 
-     * @param array $server
+     * @var string
      */
-    public function __construct(array $server)
+    protected $basePath = null;
+
+    /**
+     *
+     * @param array $server
+     * @param $basePath
+     */
+    public function __construct(array $server, $basePath)
     {
         $this->server = $server;
+        $this->basePath = $basePath;
     }
 
     /**
