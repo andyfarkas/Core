@@ -24,7 +24,7 @@ class Request implements IRequest
     public function __construct(array $server, $basePath)
     {
         $this->server = $server;
-        $this->basePath = $basePath;
+        $this->basePath = trim($basePath, '/');
     }
 
     /**
@@ -34,6 +34,12 @@ class Request implements IRequest
     public function mapToResource()
     {
         $urlParts = parse_url($this->server['REQUEST_URI']);
+
+        if ($this->basePath != null)
+        {
+            $urlParts['path'] = str_replace($this->basePath, '', $urlParts['path']);
+        }
+
         $path = trim($urlParts['path'], '/');
         $pathParts = explode('/', $path);
         $resourceName = array_shift($pathParts);

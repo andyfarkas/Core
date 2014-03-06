@@ -12,7 +12,7 @@ class ApplicationTests extends \PHPUnit_Framework_TestCase
         $response = new \Afa\Http\Response\Ok(array());
         $request = new \Afa\Http\Request(array(
             'REQUEST_URI' => '/users/list?page=1',
-        ));
+        ), null);
         
         $requestFactoryMock = $this->getMock('Afa\Http\Request\IFactory');
         $requestFactoryMock->expects($this->any())
