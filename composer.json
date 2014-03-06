@@ -1,6 +1,6 @@
 {
     "name": "afa/core",
     "autoload": {
-        "psr-4": {"Afa\\": "src"}
+        "psr-4": {"Afa\\": "src\\Afa"}
     }
 }
