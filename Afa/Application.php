@@ -21,12 +21,12 @@ class Application
      * @var Http\Response\ISender
      */
     protected $responseSender;
-    
+
     /**
-     * 
+     *
      * @param \Afa\Http\Request\IFactory $requestFactory
      * @param \Afa\Http\Resource\IInvoker $resourceInvoker
-     * @param \Afa\Afa\Http\Response\ISender $responseSender
+     * @param \Afa\Http\Response\ISender $responseSender
      */
     public function __construct(Http\Request\IFactory $requestFactory, 
                                     Http\Resource\IInvoker $resourceInvoker,

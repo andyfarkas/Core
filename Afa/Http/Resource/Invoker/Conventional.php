@@ -24,7 +24,7 @@ class Conventional implements \Afa\Http\Resource\IInvoker
      * @param string $name
      * @param string $action
      * @param array $parameters
-     * @return \Http\IResponse
+     * @return \Afa\Http\IResponse
      */
     public function invokeResource($name, $action, array $parameters)
     {
@@ -47,16 +47,16 @@ class Conventional implements \Afa\Http\Resource\IInvoker
             ));            
         }
         
-        $reponse = call_user_func_array(array($resource, $action), array($parameters));
+        $response = call_user_func_array(array($resource, $action), array($parameters));
         
-        if (!($reponse instanceof \Afa\Http\IResponse))
+        if (!($response instanceof \Afa\Http\IResponse))
         {
             return new \Afa\Http\Response\ServerError(array(
                 'error' => 'Method \'' . $classname . ':' . $action . '\' failed to retrun valid response',
             ));    
         }
         
-        return $reponse;
+        return $response;
     }
 
 }
