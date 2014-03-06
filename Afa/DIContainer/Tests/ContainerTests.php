@@ -54,16 +54,8 @@ class ContainerTests extends \PHPUnit_Framework_TestCase
     public function resolve_NonInstantiableType_ThrowsRuntimeException()
     {
         $container = $this->createContainer();
-
-        try
-        {
-            $container->resolve('Afa\DIContainer\Tests\ISampleInterface');
-            $this->fail();
-        }
-        catch (\RuntimeException $e)
-        {
-            
-        }
+        $this->setExpectedException('RuntimeException');
+        $container->resolve('Afa\DIContainer\Tests\ISampleInterface');
     }
 
     /**
@@ -84,15 +76,8 @@ class ContainerTests extends \PHPUnit_Framework_TestCase
     public function resolve_TypeWithConstructorWithoutParameterTypeHint_ThrowsRuntimeException()
     {
         $container = $this->createContainer();
-        try
-        {
-            $container->resolve('Afa\DIContainer\Tests\ClassWithConstructorWithoutTypeHint');
-            $this->fail();
-        }
-        catch (\RuntimeException $e)
-        {
-            
-        }
+        $this->setExpectedException('RuntimeException');
+        $container->resolve('Afa\DIContainer\Tests\ClassWithConstructorWithoutTypeHint');
     }
 
     /**
@@ -112,15 +97,8 @@ class ContainerTests extends \PHPUnit_Framework_TestCase
     public function resolve_TypeWithCircularDependencies_ThrowsRuntimeException()
     {
         $container = $this->createContainer();
-        try
-        {
-            $container->resolve('Afa\DIContainer\Tests\ClassWithCircularDependecies');
-            $this->fail();
-        }
-        catch (\RuntimeException $e)
-        {
-            
-        }
+        $this->setExpectedException('RuntimeException');
+        $container->resolve('Afa\DIContainer\Tests\ClassWithCircularDependecies');
     }
 
     /**
@@ -130,16 +108,8 @@ class ContainerTests extends \PHPUnit_Framework_TestCase
     {
         $container = $this->createContainer();
         $container->bindTypeTo('Afa\DIContainer\Tests\ClassWithNoConstructor', 'Afa\DIContainer\Tests\ClassWithNoConstructor');
-
-        try
-        {
-            $container->bindTypeTo('Afa\DIContainer\Tests\ClassWithNoConstructor', 'Afa\DIContainer\Tests\ClassWithNoConstructor');
-            $this->fail();
-        }
-        catch (\InvalidArgumentException $e)
-        {
-            
-        }
+        $this->setExpectedException('InvalidArgumentException');
+        $container->bindTypeTo('Afa\DIContainer\Tests\ClassWithNoConstructor', 'Afa\DIContainer\Tests\ClassWithNoConstructor');
     }
 
     /**
