@@ -26,7 +26,6 @@ class Insert implements \Afa\Database\ICommand
 
     /**
      * @param \Afa\Database\IConnection $connection
-     * @return \Afa\Database\IResult
      */
     public function run(\Afa\Database\IConnection $connection)
     {
