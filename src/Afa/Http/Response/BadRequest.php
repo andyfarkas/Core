@@ -1,8 +1,8 @@
 <?php
 
-namespace Afa\Response;
+namespace Afa\Http\Response;
 
-class BadRequest extends Response
+class BadRequest extends \Afa\Http\Response
 {
     protected $code = 400;    
 }
