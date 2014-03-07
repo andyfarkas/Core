@@ -17,7 +17,7 @@ class GenericRepositoryTests extends \PHPUnit_Framework_TestCase
         $connectionMock = $this->getMock('Afa\Database\IConnection');
         $criteriaMock = $this->getMock('Afa\Database\ICriteria');
         $criteriaMock->expects($this->any())
-                        ->method('query')
+                        ->method('run')
                         ->with($connectionMock)
                         ->will($this->returnValue($resultMock));
         
@@ -42,7 +42,7 @@ class GenericRepositoryTests extends \PHPUnit_Framework_TestCase
         $connectionMock = $this->getMock('Afa\Database\IConnection');
         $criteriaMock = $this->getMock('Afa\Database\ICriteria');
         $criteriaMock->expects($this->any())
-                        ->method('query')
+                        ->method('run')
                         ->with($connectionMock)
                         ->will($this->returnValue($resultMock));
         
@@ -71,7 +71,7 @@ class GenericRepositoryTests extends \PHPUnit_Framework_TestCase
         $connectionMock = $this->getMock('Afa\Database\IConnection');
         $criteriaMock = $this->getMock('Afa\Database\ICriteria');
         $criteriaMock->expects($this->any())
-                        ->method('query')
+                        ->method('run')
                         ->with($connectionMock)
                         ->will($this->returnValue($resultMock));                
         
@@ -111,7 +111,7 @@ class GenericRepositoryTests extends \PHPUnit_Framework_TestCase
         
         $connectionMock = $this->getMock('Afa\Database\IConnection');
         $criteriaMock->expects($this->any())
-                        ->method('query')
+                        ->method('run')
                         ->with($connectionMock)
                         ->will($this->returnValue($resultMock));
 
@@ -132,7 +132,7 @@ class GenericRepositoryTests extends \PHPUnit_Framework_TestCase
         $criteriaMock = $this->getMock('Afa\Database\ICriteria');                
         $connectionMock = $this->getMock('Afa\Database\IConnection');
         $criteriaMock->expects($this->any())
-                        ->method('query')
+                        ->method('run')
                         ->with($connectionMock)
                         ->will($this->returnValue($resultMock));
 

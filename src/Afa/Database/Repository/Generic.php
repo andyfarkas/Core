@@ -27,7 +27,7 @@ class Generic implements \Afa\Database\IRepository
      */
     public function findMany(\Afa\Database\ICriteria $criteria)
     {
-        $result = $criteria->query($this->connection);
+        $result = $criteria->run($this->connection);
         $resultSet = array();
         foreach ($result as $row)
         {
@@ -38,14 +38,15 @@ class Generic implements \Afa\Database\IRepository
     }
 
     /**
-     * 
+     *
      * @param \Afa\Database\ICriteria $criteria
-     * @return \Afa\Database\IEntity
      * @throws Exception\ObjectNotFound
+     * @throws Exception\MultipleObjectsFound
+     * @return \Afa\Database\IEntity
      */
     public function findOne(\Afa\Database\ICriteria $criteria)
     {
-        $result = $criteria->query($this->connection);
+        $result = $criteria->run($this->connection);
         
         if (count($result) > 1)
         {
@@ -61,4 +62,12 @@ class Generic implements \Afa\Database\IRepository
         return $criteria->createEntity($rowData);
     }
 
+    /**
+     *
+     * @param \Afa\Database\ICommand $command
+     */
+    public function execute(\Afa\Database\ICommand $command)
+    {
+        $command->run($this->connection);
+    }
 }

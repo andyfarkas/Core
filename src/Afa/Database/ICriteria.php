@@ -2,18 +2,7 @@
 
 namespace Afa\Database;
 
-interface ICriteria
+interface ICriteria extends ICommand, \Afa\Database\Entity\IBuilder
 {
-    /**
-     * @param \Afa\Database\IConnection $connection
-     * @return \Afa\Database\IResult $result
-     */
-    function query(\Afa\Database\IConnection $connection);
-    
-    /**     
-     * @param array $data
-     * @return IEntity
-     */
-    function createEntity(array $data);
     
 }
