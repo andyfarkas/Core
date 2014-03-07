@@ -11,4 +11,11 @@ interface IConnection
      * @return IResult
      */
     function query($query, array $arguments);
+
+    /**
+     * @param $query
+     * @param array $arguments
+     */
+    function execute($query, array $arguments);
+
 }

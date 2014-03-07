@@ -11,10 +11,11 @@ class Connection implements \Afa\Database\IConnection
     protected $pdoConnection;
 
     /**
-     * 
+     *
      * @param string $dsn
      * @param string $username
      * @param string $password
+     * @throws Exception
      */
     public function __construct($dsn, $username, $password)
     {
@@ -44,4 +45,13 @@ class Connection implements \Afa\Database\IConnection
         return new \Afa\Database\InMemoryResult($data);
     }
 
-}    
+    /**
+     * @param $query
+     * @param array $arguments
+     */
+    public function execute($query, array $arguments)
+    {
+        $statement = $this->pdoConnection->prepare($query);
+        $statement->execute($arguments);
+    }
+}
