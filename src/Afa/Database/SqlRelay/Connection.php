@@ -29,28 +29,40 @@ class Connection implements \Afa\Database\IConnection
      * 
      * @param string $query
      * @param array $arguments
-     * @return \Database\Result
+     * @return \Afa\Database\IResult
      * @throws \Afa\Database\SqlRelay\Exception
      */
     public function query($query, array $arguments)
     {
+        $cursor = $this->execQuery($query, $arguments);
+        return new Result($cursor);
+    }
+
+    /**
+     * @param $query
+     * @param array $arguments
+     * @return mixed
+     * @throws Exception
+     */
+    protected function execQuery($query, array $arguments)
+    {
         $cursor = sqlrcur_alloc($this->sqlRelayConnection);
         sqlrcur_prepareQuery($cursor, $query);
-        
+
         foreach($arguments as $variableName => $value)
         {
             sqlrcur_inputBind($cursor, $variableName, $value);
         }
-        
-        $success = sqlrcur_executeQuery($cursor);        
-                
+
+        $success = sqlrcur_executeQuery($cursor);
+
         if (!$success)
         {
             $errorMessage = sqlrcur_errorMessage($cursor);
             throw new Exception($errorMessage);
         }
-        
-        return new Result($cursor);
+
+        return $cursor;
     }
 
     public function __destruct()
@@ -59,5 +71,14 @@ class Connection implements \Afa\Database\IConnection
         {
             sqlrcon_free($this->sqlRelayConnection);
         }
+    }
+
+    /**
+     * @param string $query
+     * @param array $arguments
+     */
+    public function execute($query, array $arguments)
+    {
+        $this->execQuery($query, $arguments);
     }
 }
