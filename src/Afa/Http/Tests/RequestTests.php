@@ -1,6 +1,6 @@
 <?php
 
-namespace Http\Tests;
+namespace Afa\Http\Tests;
 
 class RequestTests extends \PHPUnit_Framework_TestCase
 {
