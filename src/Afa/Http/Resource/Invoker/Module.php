@@ -2,7 +2,7 @@
 
 namespace Afa\Http\Resource\Invoker;
 
-class Conventional extends AbstractInvoker
+class Module extends AbstractInvoker
 {
     /**
      * @param string $name
@@ -12,6 +12,6 @@ class Conventional extends AbstractInvoker
      */
     protected function resolveClassname($name, $action, array $parameters)
     {
-        return 'Resources\\' . ucfirst($name);
+        return ucfirst($name) . '\Resource';
     }
 }
