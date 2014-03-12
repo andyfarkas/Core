@@ -8,5 +8,5 @@ interface ISender
      * @param string $data
      * @param int $code
      */
-    function send($data, $code);
+    public function send($data, $code);
 }

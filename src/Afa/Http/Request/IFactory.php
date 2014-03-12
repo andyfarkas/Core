@@ -8,5 +8,5 @@ interface IFactory
      * 
      * @return \Afa\Http\IRequest
      */
-    function create();
+    public function create();
 }

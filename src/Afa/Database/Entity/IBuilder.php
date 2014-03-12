@@ -9,5 +9,5 @@ interface IBuilder
      * @param array $data
      * @return \Afa\Database\IEntity
      */
-    function createEntity(array $data);
+    public function createEntity(array $data);
 }

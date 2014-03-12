@@ -7,5 +7,5 @@ interface IConfigurator
     /**
      * @return IConnection
      */
-    function createConnection();
+    public function createConnection();
 }

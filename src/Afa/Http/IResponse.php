@@ -7,5 +7,5 @@ interface IResponse
     /**
      * @param Response\ISender $sender
      */
-    function send(Response\ISender $sender);
+    public function send(Response\ISender $sender);
 }

@@ -9,18 +9,18 @@ interface IRepository
      * @param ICriteria $criteria
      * @return IEntity
      */
-    function findOne(ICriteria $criteria);
+    public function findOne(ICriteria $criteria);
     
     /**
      *
      * @param ICriteria $criteria
      * @return IEntity[]
      */
-    function findMany(ICriteria $criteria);
+    public function findMany(ICriteria $criteria);
 
     /**
      *
      * @param ICommand $command
      */
-    function execute(ICommand $command);
+    public function execute(ICommand $command);
 }

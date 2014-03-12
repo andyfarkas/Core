@@ -8,5 +8,5 @@ interface IRequest
      * 
      * @return IResource
      */
-    function mapToResource();
+    public function mapToResource();
 }

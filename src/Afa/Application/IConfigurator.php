@@ -7,5 +7,5 @@ interface IConfigurator
     /**
      * @return string
      */
-    function getBasePath();
+    public function getBasePath();
 }

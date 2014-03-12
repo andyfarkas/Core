@@ -9,7 +9,7 @@ interface IInvoker
      * @param string $name
      * @param string $action
      * @param array $parameters
-     * @return \Http\IResponse
+     * @return \Afa\Http\IResponse
      */
-    function invokeResource($name, $action, array $parameters);
+    public function invokeResource($name, $action, array $parameters);
 }

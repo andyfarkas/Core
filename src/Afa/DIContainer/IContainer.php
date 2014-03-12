@@ -10,19 +10,19 @@ interface IContainer
      * @param string $type
      * @return object
      */
-    function resolve($type);
+    public function resolve($type);
 
     /**
      *
      * @param string $type
      * @param string $concreteType
      */
-    function bindTypeTo($type, $concreteType);
+    public function bindTypeTo($type, $concreteType);
 
     /**
      *
      * @param string $type
      * @param object $instance
      */
-    function bindTypeToInstance($type, $instance);
+    public function bindTypeToInstance($type, $instance);
 }
