@@ -23,7 +23,7 @@ class InsertTests extends \PHPUnit_Framework_TestCase
                         ->with($expectedSql, $expectedArguments);
 
         $command = new \Afa\Database\Command\Insert($table, $expectedArguments);
-        $command->run($connectionMock);
+        $command->execute($connectionMock);
     }
 
 }

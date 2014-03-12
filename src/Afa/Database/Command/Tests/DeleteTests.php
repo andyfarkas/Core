@@ -25,7 +25,7 @@ class DeleteTests extends \PHPUnit_Framework_TestCase
             'id' => 2,
         ));
 
-        $command->run($connectionMock);
+        $command->execute($connectionMock);
     }
 
     /**
@@ -50,7 +50,7 @@ class DeleteTests extends \PHPUnit_Framework_TestCase
             'column' => 3,
         ));
 
-        $command->run($connectionMock);
+        $command->execute($connectionMock);
     }
 
 }

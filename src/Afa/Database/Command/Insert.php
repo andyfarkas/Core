@@ -27,7 +27,7 @@ class Insert implements \Afa\Database\ICommand
     /**
      * @param \Afa\Database\IConnection $connection
      */
-    public function run(\Afa\Database\IConnection $connection)
+    public function execute(\Afa\Database\IConnection $connection)
     {
         $columns = array_keys($this->data);
         $variables = array_map(function($column)

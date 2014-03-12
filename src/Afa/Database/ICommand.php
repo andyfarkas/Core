@@ -8,5 +8,5 @@ interface ICommand
      * @param IConnection $connection
      * @return IResult
      */
-    public function run(IConnection $connection);
+    public function execute(IConnection $connection);
 }

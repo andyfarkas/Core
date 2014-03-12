@@ -27,7 +27,7 @@ class Generic implements \Afa\Database\IRepository
      */
     public function findMany(\Afa\Database\ICriteria $criteria)
     {
-        $result = $criteria->run($this->connection);
+        $result = $criteria->execute($this->connection);
         $resultSet = array();
         foreach ($result as $row)
         {
@@ -46,7 +46,7 @@ class Generic implements \Afa\Database\IRepository
      */
     public function findOne(\Afa\Database\ICriteria $criteria)
     {
-        $result = $criteria->run($this->connection);
+        $result = $criteria->execute($this->connection);
         
         if (count($result) > 1)
         {
@@ -68,6 +68,6 @@ class Generic implements \Afa\Database\IRepository
      */
     public function execute(\Afa\Database\ICommand $command)
     {
-        $command->run($this->connection);
+        $command->execute($this->connection);
     }
 }

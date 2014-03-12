@@ -30,7 +30,7 @@ class UpdateTests extends \PHPUnit_Framework_TestCase
             'id' => 2,
         ));
 
-        $command->run($connectionMock);
+        $command->execute($connectionMock);
     }
 
     /**
@@ -60,7 +60,7 @@ class UpdateTests extends \PHPUnit_Framework_TestCase
             'id2' => 3,
         ));
 
-        $command->run($connectionMock);
+        $command->execute($connectionMock);
     }
 
 }

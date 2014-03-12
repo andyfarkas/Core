@@ -28,7 +28,7 @@ class Delete implements \Afa\Database\ICommand
     /**
      * @param \Afa\Database\IConnection $connection
      */
-    public function run(\Afa\Database\IConnection $connection)
+    public function execute(\Afa\Database\IConnection $connection)
     {
         $columns = array_keys($this->where);
         $whereString = implode(' AND ', array_map(function($column)
