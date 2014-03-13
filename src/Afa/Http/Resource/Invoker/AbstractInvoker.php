@@ -53,7 +53,7 @@ abstract class AbstractInvoker implements \Afa\Http\Resource\IInvoker
         if (!($response instanceof \Afa\Http\IResponse))
         {
             return new \Afa\Http\Response\ServerError(array(
-                'error' => 'Method \'' . $classname . ':' . $action . '\' failed to retrun valid response',
+                'error' => 'Method \'' . $classname . ':' . $action . '\' failed to return valid response',
             ));
         }
 
